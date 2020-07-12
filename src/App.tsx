@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { Slider } from "./components/slider";
 
 function App() {
+  const [sliderValue, setSliderValue] = React.useState(100);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Frequency</h1>
       </header>
+      <body>
+        <h1>{sliderValue}</h1>
+        <Slider initialValue={sliderValue} onChange={setSliderValue} />
+      </body>
     </div>
   );
 }
