@@ -1,14 +1,11 @@
-import * as React from "react";
+import * as React from 'react';
 
 interface SliderProps {
-  initialValue?: number;
+  initialValue: number;
   onChange?: (updatedValue: number) => void;
 }
 
-export const Slider: React.FC<SliderProps> = ({
-  initialValue = 100,
-  onChange,
-}) => {
+export const Slider: React.FC<SliderProps> = ({ initialValue, onChange }) => {
   const [value, setValue] = React.useState(initialValue);
 
   const sliderOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,6 +16,7 @@ export const Slider: React.FC<SliderProps> = ({
       onChange(value);
     }
   };
+
   return (
     <input
       type="range"
