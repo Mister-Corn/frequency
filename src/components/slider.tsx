@@ -1,20 +1,19 @@
 import * as React from 'react';
+import { doNothing } from '../utils/functions';
 
 interface SliderProps {
-  initialValue: number;
+  value: number;
   onChange?: (updatedValue: number) => void;
 }
 
-export const Slider: React.FC<SliderProps> = ({ initialValue, onChange }) => {
-  const [value, setValue] = React.useState(initialValue);
-
-  const sliderOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number(e.target.value);
-    setValue(value);
-
-    if (onChange) {
-      onChange(value);
-    }
+export const Slider: React.FC<SliderProps> = ({
+  value,
+  onChange = doNothing,
+}) => {
+  const sliderOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    const value = Number(event.target.value);
+    onChange(value);
   };
 
   return (
