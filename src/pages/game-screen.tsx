@@ -19,7 +19,7 @@ export const GameScreen = () => {
 
   React.useEffect(() => {
     dispatch({ type: GameActions.START_GAME });
-  }, []);
+  }, [dispatch]);
 
   React.useEffect(() => {
     setSliderValue(target);
