@@ -1,5 +1,5 @@
 import random from 'lodash/random';
-enum GamePhases {
+export enum GamePhases {
   NOT_IN_GAME,
   PSYCHIC,
   TEAM,
@@ -7,15 +7,15 @@ enum GamePhases {
   SCORING,
 }
 
-enum GameActions {
+export enum GameActions {
   START_GAME,
 }
 
-interface ReducerAction {
+export interface ReducerAction {
   type: GameActions;
 }
 
-interface FrequencyState {
+export interface FrequencyState {
   game: {
     round: number;
     phase: GamePhases;
@@ -24,16 +24,6 @@ interface FrequencyState {
     teamB: { score: number };
   };
 }
-
-export const initialState: FrequencyState = {
-  game: {
-    round: 0,
-    phase: GamePhases.NOT_IN_GAME,
-    target: 0,
-    teamA: { score: 0 },
-    teamB: { score: 0 },
-  },
-};
 
 export const reducer = (
   state: FrequencyState,
