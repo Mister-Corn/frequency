@@ -8,7 +8,7 @@ export enum GamePhases {
 }
 
 export enum GameActions {
-  START_GAME,
+  START_GAME = 'START_GAME',
 }
 
 export interface ReducerAction {
