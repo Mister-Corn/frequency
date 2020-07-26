@@ -20,7 +20,7 @@ export const GameContext = React.createContext<{
   dispatch: doNothing,
 });
 
-export const ContextProvider: React.FC = (children) => {
+export const ContextProvider: React.FC = ({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
   return (
